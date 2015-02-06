@@ -1,13 +1,18 @@
 <div id='nom-show'>
+  <%= image_tag(@nom.pic_url, size: "200x200", alt: @nom.title, class: 'nom-pic') %>
   <h3><%= @nom.title %></h3>
+  <h3 class='score'><%= @nom.score %> Brownie points</h3>
   <p>created by: <%= @nom.user.username%> <%= time_ago_in_words @nom.created_at %> ago</p>
   <h5><%= @nom.review %></h5>
+<%= link_to "It's So Tasty!", nom_up_path(@nom.id) %>
+<%= link_to "That's Nasty!", nom_down_path(@nom.id) %>
 
   <%= render :partial => 'shared/new_comment_form', :locals => {:nom_id => @nom.id} %>
-
+<ul>
   <% @nom.comments.each do |com| %>
-    <%= render :partial => 'shared/show_comment', :locals => {:comment => com} %>
+    <li><%= render :partial => 'shared/show_comment', :locals => {:comment => com} %></li>
     <% end %>
+  </ul>
 
 </div>
 

@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   get 'votes/show', to: 'votes#show'
   post 'votes/create', to: 'votes#create'
 
+  get 'noms/:id/upvote', to: 'noms#upvote', as: 'nom_up'
+  get 'noms/:id/downvote', to: 'noms#downvote', as: 'nom_down'
+
+  get 'comment/:id/upvote', to: 'comment#upvote'
+  get 'comment/:id/downvote', to: 'comment#downvote'
+
 end
