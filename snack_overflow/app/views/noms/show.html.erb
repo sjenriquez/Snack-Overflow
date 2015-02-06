@@ -2,5 +2,12 @@
   <h3><%= @nom.title %></h3>
   <p>created by: <%= @nom.user.username%> <%= time_ago_in_words @nom.created_at %> ago</p>
   <h5><%= @nom.review %></h5>
+
+  <%= render :partial => 'shared/new_comment_form', :locals => {:nom_id => @nom.id} %>
+
+  <% @nom.comments.each do |com| %>
+    <%= render :partial => 'shared/show_comment', :locals => {:comment => com} %>
+    <% end %>
+
 </div>
 
