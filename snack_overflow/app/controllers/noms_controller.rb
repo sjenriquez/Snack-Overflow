@@ -6,6 +6,7 @@ class NomsController < ApplicationController
   end
 
   def show
+    @nom = Nom.find(params[:id])
   end
 
   def new

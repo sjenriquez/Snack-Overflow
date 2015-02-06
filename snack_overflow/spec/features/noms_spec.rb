@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 feature "test root page" do
+
+
+  # before(:each) dorspec
+  #   visit logout_path
+  # end
   scenario "confirm homepage routes to noms" do
+
     visit root_path
     expect(page).to have_css('.nom-headline')
 

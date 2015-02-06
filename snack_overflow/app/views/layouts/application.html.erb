@@ -7,9 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id='container' >
 <%= render :partial => 'layouts/nav_bar' %>
 
 <%= yield %>
-
+  </div>
 </body>
 </html>

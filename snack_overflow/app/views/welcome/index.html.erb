@@ -8,6 +8,6 @@
 <div id="vending-noms">
   These noms are the hotter than hotfries!
     <% @vending.each do |nom| %>
-      <p><%= nom.title%></p>
+      <p><%= link_to "#{nom.title}", nom_path(nom) %></p>
       <% end %>
     </div>
