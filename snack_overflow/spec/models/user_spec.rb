@@ -6,6 +6,10 @@ describe User do
   let(:user) { FactoryGirl.create(:user) }
   let(:nom) { FactoryGirl.create(:nom)}
 
+  it "has a valid FACTORY" do
+    expect(FactoryGirl.create(:user)).to be_valid
+  end
+
   it "to be valid User" do
     expect(user).to be_valid
   end
