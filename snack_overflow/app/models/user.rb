@@ -11,11 +11,29 @@ class User < ActiveRecord::Base
   # validates :name, presence: true
 
   def brownie_points
+    all_noms = self.noms
+    nom_score = 0
+    all_noms.each do |nom|
+      nom.votes.each do |vote|
+        if vote.decision == 1
+          nom_score += 1
+        end
+      end
+    end
 
+    all_comments = self.comments
+    comment_score = 0
+    all_comments.each do |comment|
+      comment.votes.each do |vote|
+        if vote.decision == 1
+          comment_score += 1
+        end
+      end
+    end
+    return nom_score + comment_score
   end
 
   def upvoted
-
+    Vote.where(votable_type: "Nom", decision: 1, user_id: self.id)
   end
-
 end
