@@ -28,4 +28,8 @@ class Comment < ActiveRecord::Base
     self.votes.where(decision: 0)
   end
 
+  def score
+    self.upvotes.count - self.downvotes.count
+  end
+
 end
