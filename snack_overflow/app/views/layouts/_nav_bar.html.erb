@@ -1,4 +1,4 @@
-<nav><span id='title'> Snack Overflow</span>
+<nav><span id='title'> <%= link_to 'Snack Overflow', root_path %></span>
   <% if current_user %>
 <span><%= current_user.username %></span>  |  <span><%= link_to 'Signout', logout_path %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
 <% else %>
