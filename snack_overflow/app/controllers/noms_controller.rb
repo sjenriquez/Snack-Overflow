@@ -17,10 +17,11 @@ class NomsController < ApplicationController
   end
 
   def create
+
     @nom = Nom.new(nom_params)
 
     if @nom.save
-      redirect_to new_nom_path
+      redirect_to nom_path(@nom.id)
     else
       @errors = @nom.errors.messages
       redirect_to :back
@@ -56,11 +57,16 @@ class NomsController < ApplicationController
 
   private
 
+  def set_user
+    params[:nom][:user_id] = session[:user_id]
+  end
+
   def set_nom
     @nom = Nom.find(params[:id])
   end
 
   def nom_params
-    params.require(:nom).permit(:title, :review, :user_id)
+    set_user
+    params.require(:nom).permit(:title, :review, :user_id, :pic_url)
   end
 end
