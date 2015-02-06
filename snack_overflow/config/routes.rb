@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   get '/signout', to: 'sessions#destroy'
 
-  get 'votes/show' to: 'votes#show'
-  post 'votes/create' to: 'votes#create'
+  get 'votes/show', to: 'votes#show'
+  post 'votes/create', to: 'votes#create'
 
 end
