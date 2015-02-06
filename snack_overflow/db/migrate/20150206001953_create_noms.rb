@@ -4,6 +4,8 @@ class CreateNoms < ActiveRecord::Migration
       t.string :title
       t.text :review
       t.integer :user_id
+
+      t.timestamps null: false
     end
   end
 end
