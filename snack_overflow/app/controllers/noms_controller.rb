@@ -1,5 +1,5 @@
 class NomsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_nom, only: [:show, :edit, :update, :destroy]
 
   def index
     @noms = Noms.all
