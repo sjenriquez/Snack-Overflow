@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :votes do
+  factory :vote do
     votable_id 2
-    votable_type
-    user_id 1
+    votable_type "Comment"
+
 
   end
 end

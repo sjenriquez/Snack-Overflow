@@ -1,8 +1,8 @@
 FactoryGirl.define do
-  factory :users do
-    name 'Biggie Smalls'
+  factory :user do
+    username 'Biggie Smalls'
     password 'bigpoppa'
-    user_id 1
+
 
   end
 end
