@@ -7,10 +7,12 @@
 <%= link_to "It's So Tasty!", nom_up_path(@nom.id) %>
 <%= link_to "That's Nasty!", nom_down_path(@nom.id) %>
 
+
   <%= render :partial => 'shared/new_comment_form', :locals => {:nom_id => @nom.id} %>
 <ul>
   <% @nom.comments.each do |com| %>
     <li><%= render :partial => 'shared/show_comment', :locals => {:comment => com} %></li>
+
     <% end %>
   </ul>
 
