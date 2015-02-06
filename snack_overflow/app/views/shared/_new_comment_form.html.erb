@@ -1,0 +1,7 @@
+<%= form_for(:comment, url: new_comment_path) do |f| %>
+  <%= f.label 'NewComments here' %>
+  <br>
+
+  <%= f.text_area 'body', size: "50x10"  %>
+   <%= f.submit "Sign Up" %>
+<% end %>

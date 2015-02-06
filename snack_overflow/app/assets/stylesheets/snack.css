@@ -18,7 +18,13 @@ float: left;
   text-align: right;
   padding-right: 20px;
   line-height: 0.35em;
+  height: 100px;
 
+}
+
+img.nom-pic {
+float: left;
+clear: both;
 }
 
 #vending-noms {
@@ -53,3 +59,18 @@ padding-right: 15px;
 
 
 }
+#hot-tags {
+position: static;
+right: 0;
+top: 400px;
+width: 30%;
+position: static;
+/* right: 0; */
+width: 30%;
+top: 587px;
+border-radius: 10px;
+border: 1px solid black;
+margin-right: 5%;
+padding: 10px;
+float: right;
+margin-top: 5%;}

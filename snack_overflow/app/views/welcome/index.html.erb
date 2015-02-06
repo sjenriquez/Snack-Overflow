@@ -1,13 +1,19 @@
 <div id='five-noms'>
-  Check out these 5 latest noms!
+  <h2>Check out these 5 latest noms!</h2>
   <% @noms.each do |nom| %>
     <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
   <% end %>
 </div>
 
 <div id="vending-noms">
-  These noms are the hotter than hotfries!
+  <h2>Vending Now!</h2>
+  <p>hotter than hot fries</p>
     <% @vending.each do |nom| %>
       <p><%= link_to "#{nom.title}", nom_path(nom) %></p>
       <% end %>
-    </div>
+</div>
+
+<div id="hot-tags">
+  <p> Salty sweet TANGY sugar soda pretzel chips cool ranch hot sauce tasty nasty crazy gummy popcorn teddy grahams SERIOUSLY TEDDY GRAHAMS</p>
+
+</div>
