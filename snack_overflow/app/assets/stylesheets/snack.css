@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+
+}
+
+#five-noms {
+ border: 1px solid black;
+width: 700px;
+border-radius: 10px;
+margin-left: 5%;
+padding: 10px;
+float: left;
+}
+
+.nom-headline {
+
+  border-top: 1px solid grey;
+  text-align: right;
+  padding-right: 20px;
+  line-height: 0.35em;
+
+}
+
+#vending-noms {
+  position: static;
+/* right: 0; */
+width: 30%;
+top: 10%;
+border-radius: 10px;
+border: 1px solid black;
+margin-right: 5%;
+padding: 10px;
+float: right;
+}
+
+div#nom-show {
+border: 1px solid black;
+width: 700px;
+border-radius: 10px;
+margin-left: 10px;
+padding: 10px;
+}
+
+nav{
+  height: 29px;
+background: red;
+color: white;
+
+padding: 10px;
+margin-bottom: 50px;
+text-align: right;
+padding-right: 15px;
+
+
+}
