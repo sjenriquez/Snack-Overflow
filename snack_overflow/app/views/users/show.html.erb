@@ -1,1 +1,16 @@
-<h1>Hi, <%= @user.username %></h1>
+<div id="user">
+  <div id="user-left">
+    <h1>Hi, <%= @user.username %></h1>
+    <div id="user-pic">
+      <%= image_tag @user.pic_url %>
+      <% if current_user %>
+        <%= link_to "Edit Profile", user_edit_path %>
+      <% end %>
+    </div>
+  </div>
+  <div id="user-info">
+    <%= @user.name %>
+    <%= @user.email %>
+    <%= @user.bio %>
+  </div>
+</div>
