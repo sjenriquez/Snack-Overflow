@@ -1,22 +1,24 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: [:show]
 
   def new
   end
 
   def create
+    @user = User.new()
   end
 
   def show
   end
 
-  def edit
+  private
+
+  def load_user
+     @user = User.find(params[:id])
   end
 
-  def update
+  def user_params
+    params.require(:user).permit(:username, :password)
   end
-
-  def destroy
-  end
-
 
 end
