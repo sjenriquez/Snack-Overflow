@@ -19,7 +19,7 @@ feature 'login or signup' do
     fill_in 'user_username', with: user.username
     fill_in 'user_password', with: user.password
     fill_in 'user_password_confirmation', with: user.password
-    click_button 'Register'
+    click_button 'Signup'
     # byebugquit
     expect(page).to have_content user.username
   end
