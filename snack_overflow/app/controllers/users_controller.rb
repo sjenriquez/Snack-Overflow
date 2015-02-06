@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show]
+  before_action :load_user, only: [:show, :edit, :update]
 
   def new
   end
@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      p "success"
       redirect_to user_show_path(@user)
     else
       redirect_to :back
@@ -18,6 +17,24 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+    if @user.id == session[:user_id]
+      render :edit
+    else
+      redirect_to :root
+    end
+  end
+
+  def update
+    if @user.update(user_params)
+       redirect_to :back
+    else
+      @errors = @user.errors.messages
+      redirect_to :back
+    end
+  end
+
+
   private
 
   def load_user
@@ -25,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :name, :email, :bio, :website_url, :pic_url, :password)
   end
 
 end

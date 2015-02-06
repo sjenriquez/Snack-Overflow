@@ -1,13 +1,15 @@
 <%= form_for(:user, url: user_update_path) do |f| %>
   <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.text_field :username, :input_html => {value: params[:username] } %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :input_html => {value: params[:name] } %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :input_html => {value: params[:email] } %>
   <%= f.label :pic_url%>
-  <%= f.text_field :pic_url %>
+  <%= f.text_field :pic_url, :input_html => {value: params[:pic_url] } %>
   <%= f.label :website_url %>
-  <%= f.text_field :website_url %>
+  <%= f.text_field :website_url, :input_html => {value: params[:website_url] } %>
   <%= f.label :bio %>
-  <%= f.text_field :bio %>
-   <%= f.submit "Sign Up" %>
+  <%= f.text_area :bio, :input_html => {value: params[:bio] } %>
+   <%= f.submit "Update" %>
 <% end %>
