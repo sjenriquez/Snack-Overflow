@@ -1,7 +1,10 @@
-<%= form_for(:comment, url: new_comment_path) do |f| %>
-  <%= f.label 'NewComments here' %>
+<%= form_for :comment, url: {controller: 'comments', action: "create"} do |f| %>
+  <%= f.hidden_field :nom_id, :value => nom_id %>
+
+  <%= f.label 'Add a Comment' %>
   <br>
 
   <%= f.text_area 'body', size: "50x10"  %>
-   <%= f.submit "Sign Up" %>
+  <br>
+  <%= f.submit "Submit" %>
 <% end %>
