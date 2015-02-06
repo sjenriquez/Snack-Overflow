@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150206015432) do
+ActiveRecord::Schema.define(version: 20150206165128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,10 +25,24 @@ ActiveRecord::Schema.define(version: 20150206015432) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "nom_tags", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "nom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "noms", force: :cascade do |t|
     t.string   "title"
     t.text     "review"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +52,12 @@ ActiveRecord::Schema.define(version: 20150206015432) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "pic_url"
+    t.integer  "brownie_points"
+    t.text     "bio"
+    t.string   "website_url"
+    t.string   "name"
   end
 
   create_table "votes", force: :cascade do |t|

@@ -1,6 +1,5 @@
 12.times {
-  User.create(username: Faker::Name.name, password: "password")
-}
+  User.create(username: Faker::Name.name, password: "password", name: Faker::Name.name, email: Faker::Internet.email}
 
 25.times {
   votable_type_arr = ["comment", "nom"].sample
