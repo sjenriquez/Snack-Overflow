@@ -9,13 +9,14 @@ class SessionsController < ApplicationController
 
     if @user.authenticate(session_params[:password])
       session[:user_id] = @user.id
-      redirect_to "/" #Needs to change to root route as soon as it is made.
+      redirect_to root_path
     else
       redirect_to :back
     end
   end
 
   def destroy
+    session.clear
     reset_session
     redirect_to root_path
   end

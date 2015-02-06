@@ -1,4 +1,4 @@
-<div class='nom-headline'><h3><%= nom.title %></h3>
+<div class='nom-headline'><h3><%= link_to "#{nom.title}", nom_path(nom) %></h3>
   <h5><%= nom.review[0..20] %>...</h5>
-  <p>created by: <%= User.find(nom.user_id).username %></p>
+  <p>created by: <%= nom.user.username%></p>
   </div>
