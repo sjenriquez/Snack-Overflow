@@ -9,6 +9,6 @@
 
 40.times {
   decision_arr = [1, 0]
-  Vote.create(votable: Comment.find(rand(1..25)), decision: decision_arr.sample)
-  Vote.create(votable: Nom.find(rand(1..25)), decision: decision_arr.sample)
+  Vote.create(votable: Comment.find(rand(1..25)), decision: decision_arr.sample, user_id: rand(1..12))
+  Vote.create(votable: Nom.find(rand(1..25)), decision: decision_arr.sample, user_id: rand(1..12))
 }
