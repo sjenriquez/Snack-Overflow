@@ -1,6 +1,6 @@
 <nav><span id='title'> <%= link_to 'Snack Overflow', root_path %></span>
   <% if current_user %>
-<span><%= current_user.username %></span>  |  <span><%= link_to 'Signout', logout_path %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
+<span><%= link_to current_user.username, user_show_path(current_user) %> </span>  |  <span><%= link_to 'Signout', logout_path %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
 <% else %>
 <span><%= link_to 'Register', signup_path %></span>  |  <span><%= link_to 'Login', signin_path %></span>
 <%end %>
