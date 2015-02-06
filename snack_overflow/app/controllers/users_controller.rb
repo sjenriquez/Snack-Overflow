@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       p "success"
-      redirect_to "/" # Needs to redirect to root path as soon as routes are done
+      redirect_to show_path(@user)
     else
       redirect_to :back
     end
