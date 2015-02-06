@@ -5,7 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new()
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      p "success"
+      redirect_to "/" # Needs to redirect to root path as soon as routes are done
+    else
+      redirect_to :back
+    end
   end
 
   def show
