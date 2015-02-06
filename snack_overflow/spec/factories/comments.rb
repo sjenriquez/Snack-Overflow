@@ -1,10 +1,8 @@
 FactoryGirl.define do
   factory :comment do
     body "I freaking love this snack"
-    parent_id nil
     user_id 1
-    nom_id 3
-
+    # nom_id 3
 
   end
 

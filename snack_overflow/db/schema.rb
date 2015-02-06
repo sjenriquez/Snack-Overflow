@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20150206165128) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "pic_url"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer  "post_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
