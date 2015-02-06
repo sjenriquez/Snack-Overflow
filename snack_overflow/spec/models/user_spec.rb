@@ -11,15 +11,15 @@ describe User do
   end
 
   it "should have a username" do
-    expect(user.username).to eq("Biggie Smalls")
+    expect(user.username).to eq("Biggie_Smalls")
   end
 
   it "should have a password" do
     expect(user.password).to eq("bigpoppa")
   end
 
-  xit "should have a email" do
-    expect(user.email).to be_truthy
+  it "should have a email" do
+    expect(user.email).to eq('tupac4lyf3@hotmail.com')
   end
 
   it "should be able to comment" do
