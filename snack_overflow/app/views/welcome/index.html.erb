@@ -1,0 +1,13 @@
+<div id='five-noms'>
+  Check out these 5 latest noms!
+  <% @noms.each do |nom| %>
+    <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+  <% end %>
+</div>
+
+<div id="vending-noms">
+  These noms are the hotter than hotfries!
+    <% @vending.each do |nom| %>
+      <p><%= nom.title%></p>
+      <% end %>
+    </div>
