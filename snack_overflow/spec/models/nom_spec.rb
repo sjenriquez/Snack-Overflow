@@ -3,6 +3,7 @@ require 'factory_girl_rails'
 
 describe Nom do
   let(:nom) {FactoryGirl.create(:nom)}
+
   it "has a valid FACTORY" do
     expect(FactoryGirl.create(:nom)).to be_valid
   end
@@ -12,7 +13,11 @@ describe Nom do
   end
 
   it "has a picture url field" do
-    expect(nom.pic_url).to be_valid
+    expect(nom.pic_url).to eq("wowwhataterriblesite.com")
+  end
+
+  it "is created by a user" do
+    expect(nom.user_id).to eq(1)
   end
 
   it "has a score" do
@@ -25,6 +30,11 @@ describe Nom do
 
   it "can recieve downvotes" do
     expect(nom.downvote).to change(nom.score).by(-1)
+  end
+
+  it "can recieve comments" do
+    nom.comments <<  FactoryGirl.build(:comment)
+    expect(nom.comments.count).to eq(1)
   end
 
 end
