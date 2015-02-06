@@ -3,7 +3,8 @@
     <h1>Hi, <%= @user.username %></h1>
     <div id="user-pic">
       <%= image_tag @user.pic_url %>
-      <% if current_user %>
+      Brownie points: <%= @user.brownie_points %>
+      <% if @user == current_user %>
         <%= link_to "Edit Profile", user_edit_path %>
       <% end %>
     </div>
