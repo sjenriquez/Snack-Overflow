@@ -41,6 +41,18 @@ class NomsController < ApplicationController
     redirect_to root_path
   end
 
+  def upvote
+    @nom = Nom.find(params[:id])
+    @nom.upvote
+    redirect_to nom_path(@nom.id)
+  end
+
+  def downvote
+    @nom = Nom.find(params[:id])
+    @nom.downvote
+    redirect_to nom_path(@nom.id)
+  end
+
 
   private
 
