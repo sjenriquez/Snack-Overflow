@@ -16,6 +16,10 @@ describe Nom do
     expect(nom.pic_url).to eq("wowwhataterriblesite.com")
   end
 
+  it "is created by a user" do
+    expect(nom.user_id).to eq(1)
+  end
+
   it "has a score" do
     expect(nom.score).to be_valid
   end
@@ -32,8 +36,5 @@ describe Nom do
     nom.comments <<  FactoryGirl.build(:comment)
     expect(nom.comments.count).to eq(1)
   end
-
-  # User can make comment
-  # Nested comments
 
 end

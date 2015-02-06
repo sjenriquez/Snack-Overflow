@@ -10,4 +10,7 @@ describe Comment do
   #   expect(FactoryGirl.create(:nom).title).to eq('Biggie Smalls')
   # end
 
+    # User can make comment
+    # Nested comments
+
 end
