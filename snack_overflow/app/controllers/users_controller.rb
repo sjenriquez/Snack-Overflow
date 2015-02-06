@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: [:show]
+  before_action :load_user, only: [:show, :edit]
 
   def new
   end
@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
   end
+
+
 
   private
 
