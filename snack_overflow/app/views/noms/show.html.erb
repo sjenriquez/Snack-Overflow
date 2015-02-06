@@ -1,0 +1,6 @@
+<div id='nom-show'>
+  <h3><%= @nom.title %></h3>
+  <p>created by: <%= @nom.user.username%> <%= time_ago_in_words @nom.created_at %> ago</p>
+  <h5><%= @nom.review %></h5>
+</div>
+
