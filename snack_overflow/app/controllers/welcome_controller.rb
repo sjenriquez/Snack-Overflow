@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @noms = Noms.take(5)
-    @vending = Noms.take(10)
+    @noms = Nom.take(5)
+    @vending = Nom.take(10)
     # need to add function
   end
 end
