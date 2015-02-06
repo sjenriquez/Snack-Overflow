@@ -1,7 +1,7 @@
 <span id='title'> Snack Overflow</span>
   <% if current_user %>
-<span><%= current_user.username %></span>  |  <span><%= link_to 'logout' %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
+<span><%= current_user.username %></span>  |  <span><%= link_to 'Signout', logout_path %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
 <% else %>
-<span><%= link_to 'Sign up', signup_path %></span>  |  <span><%= link_to 'Login', signin_path %></span>
+<span><%= link_to 'Register', signup_path %></span>  |  <span><%= link_to 'Login', signin_path %></span>
 <%end %>
-<h2>Navbar</h2>
+
