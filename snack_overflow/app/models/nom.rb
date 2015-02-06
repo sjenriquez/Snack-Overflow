@@ -1,10 +1,10 @@
 class Nom < ActiveRecord::Base
   belongs_to :user
 
-  # has_many :tags
+  has_many :nom_tags
+  has_many :tags, through: :nom_tags
 
   has_many :comments
-
 
   has_many :votes, as: :votable
 
