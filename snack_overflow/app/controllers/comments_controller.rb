@@ -43,11 +43,16 @@ class CommentsController < ApplicationController
 
   private
 
+  def set_user
+    params[:comment][:user_id] = session[:user_id]
+  end
+
   def set_comment
     @comment = Comment.find(params[:id])
   end
 
   def comment_params
+    set_user
     params.require(:comment).permit(:body, :nom_id, :parent_id, :user_id)
   end
 end
