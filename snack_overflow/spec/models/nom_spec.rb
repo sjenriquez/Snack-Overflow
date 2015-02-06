@@ -20,16 +20,28 @@ describe Nom do
     expect(nom.user_id).to eq(1)
   end
 
-  it "has a score" do
-    expect(nom.score).to be_valid
-  end
-
   it "can recieve upvotes" do
-    expect(nom.upvote).to change(nom.score).by(1)
+    nom.upvote
+    expect(nom.upvotes.last.votable_id).to eq(nom.id)
   end
 
   it "can recieve downvotes" do
-    expect(nom.downvote).to change(nom.score).by(-1)
+    nom.downvote
+    expect(nom.downvotes.last.votable_id).to eq(nom.id)
+  end
+
+  it "has a score" do
+    expect(nom.score).to be_kind_of(Integer)
+  end
+
+  it "can change score when upvoted" do
+    nom.upvote
+    expect(nom.score).to eq(1)
+  end
+
+  it "can change score when downvoted" do
+    nom.downvote
+    expect(nom.score).to eq(-1)
   end
 
   it "can recieve comments" do
