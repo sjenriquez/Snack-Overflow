@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150207215523) do
     t.text     "bio"
     t.string   "website_url"
     t.string   "name"
+    t.boolean  "admin",           default: false
   end
 
   create_table "votes", force: :cascade do |t|
