@@ -33,7 +33,35 @@ clear: both;
   padding: 30px;
 }
 
+#all-tags {
+  padding: 0px;
+  margin: 0px;
+}
 
+.nom-comment-form {
+  margin-top: 20px;
+}
+
+.comment-body {
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.comments-on-noms {
+  list-style: none;
+  margin-top: 20px;
+  margin-left: 0px;
+}
+
+.comment-list {
+  margin-top: 15px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.nom-tags {
+  margin-top: 5px;
+  margin-left: 0px;
+}
 
 /*.top-bar-section {
   top: 0;
