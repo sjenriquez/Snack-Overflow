@@ -19,7 +19,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
 
     if @tag.save
-      redirect_to tags_path
+      redirect_to nom_tags_path
     else
       #change this so that it refers to tags errors
       @errors = @comment.errors.messages
@@ -27,11 +27,14 @@ class TagsController < ApplicationController
     end
   end
 
-
-
   private
+    def set_user
+      params[:tag][:user_id] = session[:user_id]
+    end
+
     def tag_params
-      params.require(:tag).permit(:id, :name, :tagable_id, :tagable_type)
+      set_user
+      params.require(:tag).permit(:id, :name, :tagable_id, :tagable_type, :user_id)
     end
 
 end
