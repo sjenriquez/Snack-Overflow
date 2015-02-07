@@ -63,6 +63,13 @@ clear: both;
   margin-left: 0px;
 }
 
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 /*.top-bar-section {
   top: 0;
   right: 0;
