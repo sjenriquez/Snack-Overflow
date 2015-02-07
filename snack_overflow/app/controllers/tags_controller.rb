@@ -1,10 +1,18 @@
 class TagsController < ApplicationController
 
+  def index
+    @tags = Tag.all
+  end
+
+  def new
+    @tag = Tag.new
+  end
+
   def create
-    @tag = Tag.new(tag_parmas)
+    @tag = Tag.new(tag_params)
 
     if @tag.save
-      redirect_to :index
+      redirect_to tags_path
     else
       #change this so that it refers to tags errors
       @errors = @comment.errors.messages
