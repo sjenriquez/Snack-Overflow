@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :noms, :comments
+  resources :noms do
+    resources :tags, only: [:index, :new, :create]
+  end
+  resources :tags, only: [:show, :edit, :update, :destroy]
+
+  resources :comments
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'

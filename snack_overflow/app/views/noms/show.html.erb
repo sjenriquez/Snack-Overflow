@@ -16,5 +16,10 @@
     <% end %>
   </ul>
 
+  <%= render :partial => 'shared/tag_index', :locals => {:tags => @nom.tags.all} %>
+    <% @nom.tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+
 </div>
 
