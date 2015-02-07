@@ -1,6 +1,38 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Roboto', sans-serif;
+}
+
 #container {
   margin-top: 50px;
 }
+
+.nom-headline {
+  border-bottom: 1px solid #EFEFEF;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 650px;
+}
+
+img.nom-pic {
+float: left;
+clear: both;
+}
+
+.side-nav {
+  margin-top: -30px;
+}
+
+.index-nom-noms {
+  border: 1px solid #EFEFEF;
+  border-radius: 10px;
+  padding: 30px;
+}
+
 
 
 /*.top-bar-section {
@@ -8,11 +40,7 @@
   right: 0;
 }*/
 
-/*body {
-  margin: 0;
-  font-family: 'Inder', sans-serif;
-}
-
+/*
 body a {
   text-decoration: none;
   color: #004040;
@@ -42,10 +70,7 @@ float: left;
 
 }
 
-img.nom-pic {
-float: left;
-clear: both;
-}
+
 
 #vending-noms {
   position: static;
