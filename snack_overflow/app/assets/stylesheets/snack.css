@@ -1,3 +1,9 @@
+.top-bar-section {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /*body {
   margin: 0;
   font-family: 'Inder', sans-serif;
