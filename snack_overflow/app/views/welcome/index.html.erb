@@ -31,9 +31,9 @@
 
     <div class="panel">
       <h4>Featured</h4>
-      <center><%= image_tag(Nom.rand_nom.pic_url, size: "100x100") %></center>
-      <strong><%= Nom.rand_nom.title %></strong><br>
-      <%= link_to "Read More →", nom_path(Nom.rand_nom) %>
+      <center><%= image_tag(@nom_random.pic_url, size: "100x100") %></center>
+      <strong><%= @nom_random.title %></strong><br>
+      <%= link_to "Read More →", nom_path(@nom_random) %>
     </div>
 
     <h4>Vending Now!</h4>
