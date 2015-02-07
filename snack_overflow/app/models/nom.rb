@@ -19,12 +19,19 @@ class Nom < ActiveRecord::Base
 
 
   def self.vend_ten
-    @noms = Nom.all.sort {|a,b| a.score <=> b.score}.reverse
-    @noms[0..10]
+    Nom.where('created_at >= ?', 1.week.ago).sort_by(&:score).reverse.take(10)
   end
 
   def self.rand_nom
     @nom = Nom.all.sample
+  end
+
+  def self.most_popular
+    Nom.all.sort_by(&:score).reverse.take(5)
+  end
+
+  def self.most_recent
+    Nom.all.sort_by(&:created_at).reverse.take(5)
   end
 
 end
