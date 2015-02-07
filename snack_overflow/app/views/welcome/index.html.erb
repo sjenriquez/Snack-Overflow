@@ -4,20 +4,21 @@
 
 
   <div class="large-9 columns" role="content">
+    <div class="index-nom-noms">
 
+      <article>
 
-    <article>
-
-    <h2>Check out these 5 latest noms!</h2>
-      <div class="row">
-        <div class="large-9 columns">
-          <% @noms.each do |nom| %>
-            <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
-          <% end %>
+      <h2>Check out these 5 latest noms!</h2>
+        <div class="row">
+          <div class="large-9 columns">
+            <% @noms.each do |nom| %>
+              <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+            <% end %>
+          </div>
         </div>
-      </div>
 
-    </article>
+      </article>
+    </div>
 
   </div>
 
@@ -28,23 +29,21 @@
 
   <aside class="large-3 columns">
 
+    <div class="panel">
+      <h4>Featured</h4>
+      <center><%= image_tag(Nom.rand_nom.pic_url, size: "100x100") %></center>
+      <strong><%= Nom.rand_nom.title %></strong><br>
+      <%= link_to "Read More →", nom_path(Nom.rand_nom) %>
+    </div>
 
-
-
-    <h2>Vending Now!</h2>
+    <h4>Vending Now!</h4>
     <p>hotter than hot fries</p>
-
     <ul class="side-nav">
       <% @vending.each do |nom| %>
-        <li><%= link_to "#{nom.title}", nom_path(nom) %></li>
+        <li><%= link_to "#{nom.title} (Score: #{nom.score})", nom_path(nom) %> </li>
       <% end %>
     </ul>
 
-    <div class="panel">
-      <h5>Featured</h5>
-      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
-      <a href="#">Read More →</a>
-    </div>
 
   </aside>
 
@@ -54,23 +53,3 @@
 
 
 
-
-
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-6 columns">
-        <p>© Copyright no one at all. Go to town.</p>
-      </div>
-      <div class="large-6 columns">
-        <ul class="inline-list right">
-          <li><a href="#">Link 1</a></li>
-          <li><a href="#">Link 2</a></li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>

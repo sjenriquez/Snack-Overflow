@@ -1,7 +1,9 @@
 <div class='nom-headline'>
     <%= image_tag(nom.pic_url, size: "100x100", alt: nom.title, class: 'nom-pic') %>
-    <h3 class='score'><%= nom.score %> Brownie points</h3>
-  <h3><%= link_to "#{nom.title}", nom_path(nom) %></h3>
-  <h5><%= nom.review[0..20] %>...</h5>
-  <p>created by: <%= nom.user.username%></p>
+    <div class="nom-info">
+      <h4><%= link_to "#{nom.title}", nom_path(nom) %></h4>
+      <h6 class='score'><strong><%= nom.score %> Brownie points</strong></h6>
+      <h5><%= nom.review[0..20] %>...</h5>
+      <em>created by: <%= nom.user.username%></em>
+    </div>
   </div>

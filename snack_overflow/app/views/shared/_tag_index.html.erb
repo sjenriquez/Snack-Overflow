@@ -1,5 +1,5 @@
 <div id="all-tags">
   <% tags.each do |tag| %>
-    <p><%= tag.name %></p>
+    <%= link_to tag.name, tag_path(tag), class: 'button tiny radius' %>
   <% end %>
 </div>
