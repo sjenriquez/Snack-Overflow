@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
-  belongs_to :tagable, polymorphic: :true
   belongs_to :user
+  has_many :noms, through: :noms
 end
