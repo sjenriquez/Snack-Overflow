@@ -1,8 +1,38 @@
-<nav><span id='title'> <%= link_to 'Snack Overflow', root_path %></span>
-  <% if current_user %>
-<span><%= link_to current_user.username, user_show_path(current_user) %> </span>  |  <span><%= link_to 'Signout', logout_path %></span>  |  <span><%= link_to 'New Nom', new_nom_path %></span>
-<% else %>
-<span><%= link_to 'Register', signup_path %></span>  |  <span><%= link_to 'Login', signin_path %></span>
-<%end %>
-</nav>
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to 'Snack Overflow', root_path %></h1>
+    </li>
+  </ul>
 
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if current_user %>
+        <li class="">
+          <%= link_to current_user.username, user_show_path(current_user) %>
+        </li>
+        <li class="">
+          <%= link_to 'Signout', logout_path %>
+        </li>
+        <li class="">
+          <%= link_to 'New Nom', new_nom_path %>
+        </li>
+      <% else %>
+        <li class="">
+          <%= link_to 'Register', signup_path %>
+        </li>
+        <li class="">
+          <%= link_to 'Login', signin_path %>
+        </li>
+      <%end %>
+      <li class="has-dropdown">
+        <a href="#">Right Button Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class=""><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
