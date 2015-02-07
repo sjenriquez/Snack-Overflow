@@ -43,5 +43,8 @@ class Nom < ActiveRecord::Base
     self.upvotes.count - self.downvotes.count
   end
 
+  def self.rand_nom
+    @nom = Nom.all.sample
+  end
 
 end
