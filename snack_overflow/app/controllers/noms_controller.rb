@@ -14,6 +14,7 @@ class NomsController < ApplicationController
   end
 
   def edit
+    @nom = Nom.find(params[:id])
   end
 
   def create
@@ -30,7 +31,7 @@ class NomsController < ApplicationController
 
   def update
     if @nom.update(nom_params)
-       redirect_to nom_path
+       redirect_to nom_path(@nom.id)
     else
       @errors = @nom.errors.messages
       redirect_to :back
@@ -38,6 +39,7 @@ class NomsController < ApplicationController
   end
 
   def destroy
+    @nom = Nom.find(params[:id])
     @nom.destroy
     redirect_to root_path
   end
