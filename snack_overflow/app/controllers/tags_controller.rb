@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def create
-    @tag = Tagn.new(tag_parmas)
+    @tag = Tag.new(tag_parmas)
 
     if @tag.save
       redirect_to :index
