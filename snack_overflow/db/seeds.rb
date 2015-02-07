@@ -1,6 +1,7 @@
 12.times {
   User.create(username: Faker::Name.name, password: "password", name: Faker::Name.name, email: Faker::Internet.email, pic_url: Faker::Avatar.image)
 }
+User.create(username: "denko", password: "password", name: "Davi Denko", admin: true, email: Faker::Internet.email, pic_url: Faker::Avatar.image)
 
 25.times {
   Nom.create(user_id: rand(1..12), title: Faker::Lorem.sentence, review: Faker::Lorem.paragraph, pic_url: Faker::Avatar.image)

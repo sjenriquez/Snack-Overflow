@@ -7,4 +7,9 @@ module ApplicationHelper
     end
   end
 
+  def item_editable?(item)
+    if current_user
+      item.user.id == session[:user_id] || current_user.admin
+    end
+  end
 end
