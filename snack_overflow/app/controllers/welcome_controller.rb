@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-    @noms = Nom.take(5)
+    @noms_most_recent = Nom.most_recent
+    @noms_most_popular = Nom.most_popular
     @vending = Nom.vend_ten
-    # need to add function
   end
 end
