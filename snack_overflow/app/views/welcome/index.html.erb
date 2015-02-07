@@ -7,9 +7,9 @@
 
 <div id="vending-noms">
   <h2>Vending Now!</h2>
-  <p>hotter than hot fries</p>
+  <p>These noms are hotter than hot fries</p>
     <% @vending.each do |nom| %>
-      <p><%= link_to "#{nom.title}", nom_path(nom) %></p>
+      <span class='score'><%= nom.score %></span> - <%= link_to "#{nom.title}", nom_path(nom) %></p>
       <% end %>
 </div>
 
