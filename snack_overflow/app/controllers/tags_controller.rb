@@ -27,7 +27,7 @@ class TagsController < ApplicationController
 
     def tag_params
       set_user
-      params.require(:tag).permit(:id, :name, :tagable_id, :tagable_type, :user_id)
+      params.require(:tag).permit(:id, :name, :tagable_id, :tagable_type)
     end
 
 end
