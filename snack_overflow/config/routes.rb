@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :noms, :comments
+  resources :votes, only: [:show, :create]
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -10,10 +11,7 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
-  get '/signout', to: 'sessions#destroy', as: 'logout'
-
-  get 'votes/show', to: 'votes#show'
-  post 'votes/create', to: 'votes#create'
+  get '/signout', to: 'sessions#destroy', as: 'logout'  
 
   get 'noms/:id/upvote', to: 'noms#upvote', as: 'nom_up'
   get 'noms/:id/downvote', to: 'noms#downvote', as: 'nom_down'
