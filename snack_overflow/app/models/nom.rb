@@ -23,7 +23,7 @@ class Nom < ActiveRecord::Base
   end
 
   def self.rand_nom
-    @nom = Nom.all.sample
+    Nom.all.sample
   end
 
   def self.most_popular
