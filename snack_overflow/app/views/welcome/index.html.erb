@@ -1,19 +1,76 @@
-<div id='five-noms'>
-  <h2>Check out these 5 latest noms!</h2>
-  <% @noms.each do |nom| %>
-    <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
-  <% end %>
-</div>
 
-<div id="vending-noms">
-  <h2>Vending Now!</h2>
-  <p>These noms are hotter than hot fries</p>
-    <% @vending.each do |nom| %>
-      <span class='score'><%= nom.score %></span> - <%= link_to "#{nom.title}", nom_path(nom) %></p>
+
+<div class="row">
+
+
+  <div class="large-9 columns" role="content">
+
+
+    <article>
+
+    <h2>Check out these 5 latest noms!</h2>
+      <div class="row">
+        <div class="large-9 columns">
+          <% @noms.each do |nom| %>
+            <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+          <% end %>
+        </div>
+      </div>
+
+    </article>
+
+  </div>
+
+
+
+
+
+
+  <aside class="large-3 columns">
+
+
+
+
+    <h2>Vending Now!</h2>
+    <p>hotter than hot fries</p>
+
+    <ul class="side-nav">
+      <% @vending.each do |nom| %>
+        <li><%= link_to "#{nom.title}", nom_path(nom) %></li>
       <% end %>
+    </ul>
+
+    <div class="panel">
+      <h5>Featured</h5>
+      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow.</p>
+      <a href="#">Read More →</a>
+    </div>
+
+  </aside>
+
+
 </div>
 
-<div id="hot-tags">
-  <p> Salty sweet TANGY sugar soda pretzel chips cool ranch hot sauce tasty nasty crazy gummy popcorn teddy grahams SERIOUSLY TEDDY GRAHAMS</p>
 
-</div>
+
+
+
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
