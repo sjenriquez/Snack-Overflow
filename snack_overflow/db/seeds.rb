@@ -12,3 +12,13 @@
   Vote.create(votable: Comment.find(rand(1..25)), decision: decision_arr.sample, user_id: rand(1..12))
   Vote.create(votable: Nom.find(rand(1..25)), decision: decision_arr.sample, user_id: rand(1..12))
 }
+
+tag_flavors = ["Sweet","Salty","Savory","Unami","Sour"]
+tag_flavors.each{ |flavor| Tag.create(name: flavor) }
+tag_types = ["User", "Nom"]
+
+Tag.all.each do |tag|
+  tag.tagable_id = rand(1..5)
+  tag.tagable_type = tag_types.sample
+end
+
