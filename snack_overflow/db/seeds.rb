@@ -15,10 +15,11 @@
 
 tag_flavors = ["Sweet","Salty","Savory","Unami","Sour"]
 tag_flavors.each{ |flavor| Tag.create(name: flavor) }
-tag_types = ["User", "Nom"]
 
 Tag.all.each do |tag|
-  tag.tagable_id = rand(1..5)
-  tag.tagable_type = tag_types.sample
+  tag.update(
+    tagable_id: rand(1..5),
+    tagable_type: ["User", "Nom"].sample
+    )
 end
 
