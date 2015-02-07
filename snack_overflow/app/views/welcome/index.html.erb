@@ -11,7 +11,7 @@
       <h2>Check out these 5 latest noms!</h2>
         <div class="row">
           <div class="large-9 columns">
-            <% @noms.each do |nom| %>
+            <% @noms_most_recent.each do |nom| %>
               <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
             <% end %>
           </div>
