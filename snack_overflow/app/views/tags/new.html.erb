@@ -1,0 +1,5 @@
+<%= form_for :tag, url: {controller: 'tags', action: "create"} do |f| %>
+  <%= f.label 'Add a Tag' %> <br>
+  <%= f.text_field 'name' %><br>
+  <%= f.submit "Tag" %>
+<% end %>
