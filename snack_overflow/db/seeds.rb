@@ -4,7 +4,7 @@
 
 25.times {
   Nom.create(user_id: rand(1..12), title: Faker::Lorem.sentence, review: Faker::Lorem.paragraph, pic_url: Faker::Avatar.image)
-  Comment.create(user_id: rand(1..12), nom_id: rand(1..25), body: Faker::Lorem.paragraph, parent_id: nil)
+  Comment.create(user_id: rand(1..12), nom_id: rand(1..25), body: Faker::Lorem.paragraph)
 }
 
 40.times {
