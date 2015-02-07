@@ -1,12 +1,14 @@
-<div id='new-nom-form'>
+<div id='new-nom'>
+  <div id='form'>
   <h3> Add your favorite noms here </h3>
   <%= form_for(:nom, url: noms_path) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
-  <%= f.label :review %>
+  <%= f.label 'Review your nom!' %>
   <%= f.text_area :review, size: "35x10" %><br>
   <%= f.label :pic_url%>
   <%= f.text_field :pic_url %><br>
   <%= f.submit "NOM NOM NOM" %>
 <% end %>
+</div>
 </div>
