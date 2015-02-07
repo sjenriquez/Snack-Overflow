@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :noms do
-    :tags, only: [:index, :new, :create]
+    resources :tags, only: [:index, :new, :create]
   end
   resources :tags, only: [:show, :edit, :update, :destroy]
 
