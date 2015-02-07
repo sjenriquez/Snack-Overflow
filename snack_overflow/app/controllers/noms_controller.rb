@@ -2,7 +2,7 @@ class NomsController < ApplicationController
   before_action :set_nom, only: [:show, :edit, :update, :destroy]
 
   def index
-    @noms = Noms.all
+    @noms = Nom.all
   end
 
   def show
