@@ -10,7 +10,6 @@ class Nom < ActiveRecord::Base
   has_many :comments
 
   has_many :votes, as: :votable
-  has_many :tags, as: :tagable
 
   validates :title, presence: true
   validates :review, presence: true
