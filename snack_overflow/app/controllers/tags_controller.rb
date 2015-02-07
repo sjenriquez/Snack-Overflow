@@ -1,7 +1,14 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = Tag.all.where(tagable_id: params[:nom_id])
+    if params[:nom_id]
+      @tags = Tag.all.where(tagable_id: params[:nom_id])
+    elsif params[:user_id]
+      @tags = Tag.all.where(tagable_id: params[:user_id])
+    else
+      #fix this and make a tags specific error
+      @errors = @comment.errors.messages
+    end
   end
 
   def new
