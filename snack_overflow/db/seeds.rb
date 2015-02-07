@@ -13,8 +13,7 @@
   Vote.create(votable: Nom.find(rand(1..25)), decision: decision_arr.sample, user_id: rand(1..12))
 }
 
-tag_flavors = ["Sweet","Salty","Savory","Unami","Sour"]
-tag_flavors.each{ |flavor| Tag.create(name: flavor) }
+["Sweet","Salty","Savory","Unami","Sour"].each{ |flavor| Tag.create(name: flavor) }
 
 Tag.all.each do |tag|
   tag.update(
