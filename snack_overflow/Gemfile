@@ -30,6 +30,9 @@ gem 'rspec-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Foundation Gem
+gem 'foundation-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -56,5 +59,6 @@ group :test do
 
 
 end
+
 
 
