@@ -1,4 +1,5 @@
 class Tag < ActiveRecord::Base
   belongs_to :user
-  has_many :noms, through: :noms
+  has_many :noms, through: :nom_tags
+  has_many :nom_tags
 end
