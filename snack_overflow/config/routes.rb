@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :noms, :comments
+  resources :noms, :comments, :tags
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
