@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = Tag.all
+    @tags = Tag.all.where(tagable_id: params[:nom_id])
   end
 
   def new
@@ -19,6 +19,8 @@ class TagsController < ApplicationController
       redirect_to :back
     end
   end
+
+
 
   private
     def tag_params
