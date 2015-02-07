@@ -39,7 +39,7 @@ clear: both;
 
 #vending-noms {
   position: static;
-/* right: 0; */
+right: 0;
 width: 30%;
 top: 10%;
 border-radius: 10px;
@@ -83,7 +83,7 @@ right: 0;
 top: 400px;
 width: 30%;
 position: static;
-/* right: 0; */
+right: 0;
 width: 30%;
 top: 587px;
 border-radius: 10px;
