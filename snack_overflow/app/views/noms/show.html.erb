@@ -11,6 +11,9 @@
         <h5><%= @nom.review %></h5>
         <%= link_to "It's So Tasty!", nom_up_path(@nom.id), class: 'button radius success' %>
         <%= link_to "That's Nasty!", nom_down_path(@nom.id), class: 'button radius alert'%>
+        <% if item_editable?(@nom) %>
+        | <%= link_to "Edit", edit_nom_path%> | <%= link_to 'Delete', nom_path(@nom.id), method: :delete %>
+        <% end %>
         </article>
       </div>
 
