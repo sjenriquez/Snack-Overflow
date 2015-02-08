@@ -1,15 +1,22 @@
-<%= form_for(:user, url: user_update_path, method: "patch") do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, :input_html => {value: params[:username] } %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :input_html => {value: params[:name] } %>
-  <%= f.label :email %>
-  <%= f.text_field :email, :input_html => {value: params[:email] } %>
-  <%= f.label :pic_url%>
-  <%= f.text_field :pic_url, :input_html => {value: params[:pic_url] } %>
-  <%= f.label :website_url %>
-  <%= f.text_field :website_url, :input_html => {value: params[:website_url] } %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio, :input_html => {value: params[:bio] } %>
-   <%= f.submit "Update" %>
-<% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <%= form_for(:user, url: user_update_path, method: "patch") do |f| %>
+      <fieldset>
+        <legend>Update Profile</legend>
+        <%= f.label :username %>
+        <%= f.text_field :username, :input_html => {value: params[:username] } %>
+        <%= f.label :name %>
+        <%= f.text_field :name, :input_html => {value: params[:name] } %>
+        <%= f.label :email %>
+        <%= f.text_field :email, :input_html => {value: params[:email] } %>
+        <%= f.label :pic_url%>
+        <%= f.text_field :pic_url, :input_html => {value: params[:pic_url] } %>
+        <%= f.label :website_url %>
+        <%= f.text_field :website_url, :input_html => {value: params[:website_url] } %>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, :input_html => {value: params[:bio] } %>
+         <%= f.submit "Update" %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
