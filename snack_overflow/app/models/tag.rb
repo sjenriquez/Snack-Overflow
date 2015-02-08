@@ -7,4 +7,7 @@ class Tag < ActiveRecord::Base
     self.all.map {|t| t.name}
   end
 
+  def self.tags_for_select
+    self.all_tags.map {|a| [a,a]}
+  end
 end

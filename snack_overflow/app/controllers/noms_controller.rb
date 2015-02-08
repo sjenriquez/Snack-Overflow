@@ -7,7 +7,7 @@ class NomsController < ApplicationController
 
   def show
     @nom = Nom.find(params[:id])
-    @tags = Tag.all_tags
+    @tags = Tag.tags_for_select
   end
 
   def new

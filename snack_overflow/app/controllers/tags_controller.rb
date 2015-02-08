@@ -30,7 +30,7 @@ class TagsController < ApplicationController
     end
 
     def set_name
-      if params[:tag][:add_name]
+      if !params[:tag][:add_name].empty?
         params[:tag][:name] = params[:tag][:add_name]
       else
         params[:tag][:name] = params[:tag][:select_name]
