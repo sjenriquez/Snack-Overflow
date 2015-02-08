@@ -15,7 +15,7 @@
           </div>
           <div class="nom-nom-info">
             <%= image_tag(@nom.pic_url, size: "200x200", alt: @nom.title, class: 'nom-pic') %>
-
+            <h5>Brownie Points: <%= @nom.score %></h5>
             <h5><%= @nom.review %></h5>
 
             <% if item_editable?(@nom) %>
