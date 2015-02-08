@@ -12,6 +12,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(tag_params)
 
     if @tag.save
+
       redirect_to :back
     else
       #change this so that it refers to tags errors
