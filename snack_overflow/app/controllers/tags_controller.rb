@@ -1,14 +1,11 @@
 class TagsController < ApplicationController
 
   def index
-    if params[:nom_id]
-      @tags = Tag.all.where(tagable_id: params[:nom_id])
-    elsif params[:user_id]
-      @tags = Tag.all.where(tagable_id: params[:user_id])
-    else
-      #fix this and make a tags specific error
-      @errors = @comment.errors.messages
-    end
+    @tags = Tag.all
+  end
+
+  def show
+    @tag = Tag.find(params[:id])
   end
 
   def new
@@ -16,12 +13,12 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(tag_params)
+    @tag = Tag.where(name: tag_params[:name]).first_or_create
 
     if @tag.save
-      redirect_to nom_tags_path
+      NomTag.create(tag_id: @tag.id, nom_id: tag_params[:nom_id])
+      redirect_to :back
     else
-      #change this so that it refers to tags errors
       @errors = @comment.errors.messages
       redirect_to :back
     end
@@ -32,9 +29,18 @@ class TagsController < ApplicationController
       params[:tag][:user_id] = session[:user_id]
     end
 
+    def set_name
+      if !params[:tag][:add_name].empty?
+        params[:tag][:name] = params[:tag][:add_name]
+      else
+        params[:tag][:name] = params[:tag][:select_name]
+      end
+    end
+
     def tag_params
       set_user
-      params.require(:tag).permit(:id, :name, :tagable_id, :tagable_type, :user_id)
+      set_name
+      params.require(:tag).permit(:id, :name, :user_id, :nom_id)
     end
 
 end

@@ -33,6 +33,7 @@
         <h5>Tags</h5>
         <ul class="nom-tags">
           <%= render :partial => 'shared/tag_index', :locals => {:tags => @nom.tags.all} %>
+          <%= render :partial => 'shared/new_tag_form'%>
         </ul>
 
 

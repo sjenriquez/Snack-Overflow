@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :noms
   has_many :comments
   has_many :votes, as: :votable
-  has_many :tags, as: :tagable
+  has_many :tags
 
   # validates :username, presence: true, uniqueness: true
   # validates :password, presence: true

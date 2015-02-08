@@ -18,8 +18,7 @@ User.create(username: "denko", password: "password", name: "Davi Denko", admin: 
 
 Tag.all.each do |tag|
   tag.update(
-    tagable_id: rand(1..5),
-    tagable_type: ["User", "Nom"].sample
+    user_id: rand(1..10)
     )
 end
 

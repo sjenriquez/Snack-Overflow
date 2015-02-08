@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-  resources :noms do
-    resources :tags, only: [:index, :new, :create]
-  end
-  resources :tags, only: [:show, :edit, :update, :destroy]
 
-  resources :comments
+  resources :noms, :comments
+  resources :tags, only: [:show, :create, :new, :index]
+
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -25,5 +23,8 @@ Rails.application.routes.draw do
 
   get 'comment/:id/upvote', to: 'comments#upvote', as: 'comment_up'
   get 'comment/:id/downvote', to: 'comments#downvote', as: 'comment_down'
+
+  get 'nom_tags/show', to: 'nom_tags#show'
+  post 'nom_tags/create', to: 'nom_tags#create'
 
 end

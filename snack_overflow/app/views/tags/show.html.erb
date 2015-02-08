@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="large-9 columns" role="content">
+
+    <h3> All Articles with the tag <%= @tag.name%></h3>
+    <% @tag.noms.each do |nom| %>
+      <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+    <% end %>
+
+  </div>
+</div>
