@@ -1,11 +1,11 @@
 module Scoring
 
-	def upvote
-    Vote.create(votable: self, decision: 1)
+	def upvote(user_id)
+    Vote.create(votable: self, decision: 1, user_id: user_id)
   end
 
-  def downvote
-    Vote.create(votable: self, decision: 0)
+  def downvote(user_id)
+    Vote.create(votable: self, decision: 0, user_id: user_id)
   end
 
   def upvotes

@@ -42,13 +42,13 @@ class CommentsController < ApplicationController
 
   def upvote
     @comment = Comment.find(params[:id])
-    @comment.upvote
+    @comment.upvote(session[:user_id])
     redirect_to :back
   end
 
   def downvote
     @comment = Comment.find(params[:id])
-    @comment.downvote
+    @comment.downvote(session[:user_id])
     redirect_to :back
   end
 
