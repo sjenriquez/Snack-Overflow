@@ -12,15 +12,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .nom-headline {
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 1px solid #d7d7d7;
   padding-bottom: 20px;
   padding-top: 20px;
   width: 650px;
 }
 
 img.nom-pic {
-float: left;
-clear: both;
+  float: left;
+  margin-right: 15px;
+  margin-left: -20px;
+}
+
+img.index-nom-pic {
+  float: left;
+  padding: 10px;
 }
 
 .side-nav {
@@ -28,7 +34,7 @@ clear: both;
 }
 
 .index-nom-noms {
-  border: 1px solid #EFEFEF;
+  border: 1px solid #d7d7d7;
   border-radius: 10px;
   padding: 30px;
 }
@@ -68,6 +74,42 @@ clear: both;
   top: 0;
   left: 0;
   z-index: 1;
+  max-width: 100%;
+  height: auto;
+}
+
+.all-of-nom-stuff {
+  width: 700px;
+  max-width: 90%;
+}
+
+.tasty-nasty {
+  float: left;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.nom-nom-info {
+  width: 100%;
+}
+
+.nom-title {
+  width: 100%;
+}
+
+.comment-buttons {
+  float: left;
+}
+
+.comment-body {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 80px;
+}
+
+.tab-title {
+  border: 1px solid #d7d7d7;
 }
 
 /*.top-bar-section {
