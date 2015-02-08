@@ -74,7 +74,7 @@ img.index-nom-pic {
   top: 0;
   left: 0;
   z-index: 1;
-  max-width: 100%;
+  width: 200px;
   height: auto;
 }
 
@@ -110,6 +110,13 @@ img.index-nom-pic {
 
 .tab-title {
   border: 1px solid #d7d7d7;
+}
+
+div#nom-show {
+border: 1px solid #d7d7d7;
+margin-left: 10px;
+padding: 10px;
+float: left;
 }
 
 /*.top-bar-section {
@@ -161,13 +168,7 @@ padding: 10px;
 float: right;
 }
 
-div#nom-show {
-border: 1px solid black;
-width: 700px;
-border-radius: 10px;
-margin-left: 10px;
-padding: 10px;
-}
+
 
 nav {
   height: 29px;

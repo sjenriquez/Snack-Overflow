@@ -15,7 +15,7 @@
           </div>
           <div class="nom-nom-info">
             <%= image_tag(@nom.pic_url, size: "200x200", alt: @nom.title, class: 'nom-pic') %>
-
+            <h5>Brownie Points: <%= @nom.score %></h5>
             <h5><%= @nom.review %></h5>
 
             <% if item_editable?(@nom) %>
@@ -28,7 +28,7 @@
       <aside class="large-3 columns">
 
         <h4>Nom`d by:</h4>
-        <h4><%= @nom.user.username%></h4>
+        <h4><%= link_to @nom.user.username, user_show_path(@nom.user) %></h4>
         <p><%= time_ago_in_words @nom.created_at %> ago</p>
         <h5>Tags</h5>
         <ul class="nom-tags">

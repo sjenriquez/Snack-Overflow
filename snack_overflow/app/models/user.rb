@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def upvoted
-    Vote.where(votable_type: "Nom", decision: 1, user_id: self.id)
+    upvotes = Vote.where(votable_type: "Nom", decision: 1, user_id: self.id)
+    return upvotes.map { |upvote| Nom.find(upvote.votable_id) }
   end
 end

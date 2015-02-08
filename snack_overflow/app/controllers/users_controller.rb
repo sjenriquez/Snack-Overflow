@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @noms = @user.noms
+    @upvoted_noms = @user.upvoted
   end
 
   def edit

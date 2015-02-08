@@ -1,24 +1,27 @@
-<div id="new-user">
-  <h3>Register here to post all your favorite noms. </h3>
-  <div id='form'>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <h3>Register here to post all your favorite noms. </h3>
     <%= form_for(:user, url: signup_path) do |f| %>
-      <%= f.label :username %>
-      <%= f.text_field :username %>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.label :pic_url%>
-      <%= f.text_field :pic_url %>
-      <%= f.label :website_url %>
-      <%= f.text_field :website_url %>
-      <%= f.label :bio %>
-      <%= f.text_area :bio %>
-       <%= f.submit "Sign Up" %>
+      <fieldset>
+        <legend>Signup</legend>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation %>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+          <%= f.label :email %>
+          <%= f.text_field :email %>
+          <%= f.label :pic_url%>
+          <%= f.text_field :pic_url %>
+          <%= f.label :website_url %>
+          <%= f.text_field :website_url %>
+          <%= f.label :bio %>
+          <%= f.text_area :bio %>
+          <%= f.submit "Sign Up" %>
+      </fieldset>
     <% end %>
   </div>
 </div>
