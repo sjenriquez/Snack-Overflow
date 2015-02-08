@@ -1,6 +1,10 @@
 <div class='comment-show'>
-<span class='comment-score'><%= link_to "Tasty!", comment_up_path(comment.id), class: 'button radius tiny success' %>
-<%= link_to "Nasty!", comment_down_path(comment.id), class: 'button radius tiny alert' %>
- |  Brownie Points :<%= comment.score %></span>
-  <p class='comment-body'><%= comment.body %></p>
+  <span class='comment-buttons'>
+    <%= link_to "Tasty!", comment_up_path(comment.id), class: 'button radius tiny success' %><br>
+    <%= link_to "Nasty!", comment_down_path(comment.id), class: 'button radius tiny alert' %>
+  </span>
+  <p class='comment-body'>
+    Brownie Points :<%= comment.score %><br>
+    <%= comment.body %>
+  </p>
 </div>
