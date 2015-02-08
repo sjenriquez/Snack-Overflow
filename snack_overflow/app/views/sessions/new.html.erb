@@ -1,7 +1,14 @@
-<%= form_for(:session, url: signin_path) do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Login" %>
-<% end %>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <%= form_for(:session, url: signin_path) do |f| %>
+      <fieldset>
+        <legend>Signin</legend>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.submit "Login" %>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
