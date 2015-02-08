@@ -13,7 +13,7 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.first_or_create(tag_params)
+    @tag = Tag.where(name: tag_params[:name]).first_or_create
 
     if @tag.save
       NomTag.create(tag_id: @tag.id, nom_id: tag_params[:nom_id])
