@@ -47,13 +47,13 @@ class NomsController < ApplicationController
 
   def upvote
     @nom = Nom.find(params[:id])
-    @nom.upvote
+    @nom.upvote(session[:user_id])
     redirect_to nom_path(@nom.id)
   end
 
   def downvote
     @nom = Nom.find(params[:id])
-    @nom.downvote
+    @nom.downvote(session[:user_id])
     redirect_to nom_path(@nom.id)
   end
 
