@@ -7,15 +7,22 @@
     <div class="index-nom-noms">
 
       <article>
-
-      <h2>Check out these 5 latest noms!</h2>
-        <div class="row">
-          <div class="large-9 columns">
-            <% @noms_most_recent.each do |nom| %>
-              <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
-            <% end %>
-          </div>
+      <ul class="tabs" data-tab>
+        <li class="tab-title active"><a href="#panel1">Most Recent</a></li>
+        <li class="tab-title"><a href="#panel2">Popular</a></li>
+      </ul>
+      <div class="tabs-content">
+        <div class="content active" id="panel1">
+          <% @noms_most_recent.each do |nom| %>
+            <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+          <% end %>
         </div>
+        <div class="content" id="panel2">
+          <% @noms_most_popular.each do |nom| %>
+            <%= render :partial => 'shared/nom_headline', :locals => {:nom => nom} %>
+          <% end %>
+        </div>
+      </div>
 
       </article>
     </div>
