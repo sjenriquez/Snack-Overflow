@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   get 'comment/:id/upvote', to: 'comments#upvote', as: 'comment_up'
   get 'comment/:id/downvote', to: 'comments#downvote', as: 'comment_down'
 
+  get 'nom_tags/show', to: 'nom_tags#show'
+  post 'nom_tags/create', to: 'nom_tags#create'
+
 end
