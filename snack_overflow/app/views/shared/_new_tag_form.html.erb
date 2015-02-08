@@ -1,10 +1,10 @@
 <div class="add-tag-dropdown">
   <%= form_for :tag, url: {controller: 'tags', action: "create"} do |f| %>
     <%= f.label 'Add a Tag' %> <br>
-    <%= f.select :select_name, options_for_select(@tags, @tags.sample ) %>
+    <%= f.select :select_name, options_for_select(@tags) %>
     <%= f.label 'or, Create a New Tag' %> <br>
     <%= f.text_field :add_name %><br>
-    <%= f.submit "Tag" %>
     <%= f.hidden_field :nom_id, :value => @nom.id %>
+    <%= f.submit "Tag" %>
   <% end %>
 </div>

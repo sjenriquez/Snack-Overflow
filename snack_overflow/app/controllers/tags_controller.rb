@@ -4,12 +4,16 @@ class TagsController < ApplicationController
     @tags = Tag.all
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+  end
+
   def new
     @tag = Tag.new
   end
 
   def create
-    @tag = Tag.first_or_initialize(name: tag_params[:name])
+    @tag = Tag.first_or_create(tag_params)
 
     if @tag.save
       NomTag.create(tag_id: @tag.id, nom_id: tag_params[:nom_id])
@@ -26,7 +30,7 @@ class TagsController < ApplicationController
     end
 
     def set_name
-      if params[:tag][:select_name]
+      if params[:tag][:add_name]
         params[:tag][:name] = params[:tag][:add_name]
       else
         params[:tag][:name] = params[:tag][:select_name]
