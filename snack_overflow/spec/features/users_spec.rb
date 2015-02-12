@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "STUFF" do
+feature "STUFF" do # srsly unprofessional..it's a giveaway that testing to you is an afterthought.  I might press on this point during interviews or I might use it to stress test you.
   let(:user) {FactoryGirl.create(:user)}
 
   scenario "Creates a new user successfully" do

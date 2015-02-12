@@ -41,6 +41,8 @@ class CommentsController < ApplicationController
   end
 
   def upvote
+    # What's the point of making @variables here?  You're not sending anything
+    # to a view, so .....why not just 'comment'
     @comment = Comment.find(params[:id])
     @comment.upvote(session[:user_id])
     redirect_to :back

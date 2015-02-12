@@ -1,3 +1,5 @@
+# Here you generated a model with the generators and it left this junk around
+# that you committed...
 require 'rails_helper'
 
 RSpec.describe NomTag, type: :model do

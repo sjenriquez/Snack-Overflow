@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if @user.id == session[:user_id]
+    if user_is_viewing_own_page?
       render :edit
     else
       redirect_to :root

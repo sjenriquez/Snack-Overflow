@@ -1,20 +1,11 @@
 class VotesController < ApplicationController
-
-
   def create
-    @vote =Vote.new(vote_params)
-
-    if @vote.save
-      redirect_to :back
-    else
-      redirect_to :back
-    end
+    @vote = Vote.new(vote_params)
+    redirect_to :back
   end
 
   def show
   end
-
-
 
   private
     def vote_params
